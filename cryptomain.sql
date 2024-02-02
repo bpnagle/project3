@@ -4,7 +4,7 @@ Create table bitcoin(
 	High float Not Null,
 	Low float Not Null,
 	Close float Not Null,
-	Percentage_difference float, not Null);
+	Percent_Change float not Null);
 
 	Select * from bitcoin
 	
@@ -14,7 +14,7 @@ Create table bitcoin(
 	High float Not Null,
 	Low float Not Null,
 	Close float Not Null,
-	Percentage_difference float Not Null);
+	Percent_Change float Not Null);
 
 	Select * from ethereum
 	
@@ -24,6 +24,6 @@ Create table bitcoin(
 	High float Not Null,
 	Low float Not Null,
     Close float Not Null,
-	Percentage_difference float Not Null);
+	Percent_Change float Not Null);
 	Select * from doge
 	
