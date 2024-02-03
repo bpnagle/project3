@@ -6,8 +6,8 @@ This repository demonstrates the use of various tools to perform ETL, structure 
 Ethical Considerations<br>
 Data Ethics is an important consideration for any data based project. Fortunately the scope of this project did not infringe on any existing conventions for data ethics. The stock data collected is publicly available and freely distributed. Since the data is factual in nature and widely available for public use, it is not original work, and it contains no personally identifiable information therefore meeting the standard for fair use.
 
-Sources
-https://finance.yahoo.com/quote/META/history?p=META
-https://www.kaggle.com/datasets/kaushiksuresh147/ethereum-cryptocurrency-historical-dataset
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7414361/
-https://www.mdpi.com/2227-7390/11/20/4395
+Sources<br>
+https://finance.yahoo.com/quote/META/history?p=META<br>
+https://www.kaggle.com/datasets/kaushiksuresh147/ethereum-cryptocurrency-historical-dataset<br>
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7414361/<br>
+https://www.mdpi.com/2227-7390/11/20/4395<br>
