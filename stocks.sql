@@ -185,25 +185,6 @@ WHERE
     Crypto_Ownership."Number_of_Crypto_Ownership" IS NOT NULL;
 
 
-
-
-SELECT
-    cwc.countries,
-    countries_coordinates."Latitude",
-    countries_coordinates."Longitude",
-    cwc.pop2023,
-    Crypto_Ownership."Number_of_Crypto_Ownership", 
-    world_gdp_data."gdpPerCapita"  
-FROM
-    Crypto_World_Countries AS cwc
-LEFT JOIN
-    Crypto_Ownership ON cwc.countries = Crypto_Ownership."Countries"
-LEFT JOIN
-    world_gdp_data ON cwc.countries = world_gdp_data.countries
-LEFT JOIN
-    countries_coordinates ON cwc.countries = countries_coordinates."Countries"
-WHERE
-    Crypto_Ownership."Number_of_Crypto_Ownership" IS NOT NULL;
 	
 -----------------
 SELECT
