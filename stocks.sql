@@ -98,13 +98,25 @@ CREATE TABLE "amzn" (
         "Date"
      )
 );
+--------------------------------------------
 
-Create table crypto_world_countries (
+--Data Cleaning for the mapping section
+
+
+CREATE TABLE countries_coordinates (
+    "Countries" TEXT Primary Key NOT NULL,
+    "Latitude" NUMERIC(8, 6),
+    "Longitude" NUMERIC(9, 6),
+    "A2_ISO" TEXT
+);
+
+CREATE TABLE  "Crypto_World_Countries" (
+    "ID" INT Primary Key Not null,
     "place" INT,
-    "pop2023" INT,
-    "growthRate" NUMERIC(6, 5),
+    "pop2023" INT NOT NULL,
+    "growthRate" NUMERIC(6, 5) NOT NULL,
     "area" NUMERIC(9, 1),
-    "country" TEXT,
+    "countries" TEXT NOT NULL,
     "cca3" TEXT,
     "cca2" TEXT,
     "ccn3" INT,
@@ -116,78 +128,99 @@ Create table crypto_world_countries (
     "density" NUMERIC(9, 4),
     "densityMi" NUMERIC(9, 4),
     "Rank" INT,
-    "CryptoCurrencyStatus" TEXT,
-    "CryptoCurrencyNotes" TEXT,
-    "Column_19" TEXT,
-    "Column_20" TEXT,
-    "Column_21" TEXT
+    "CryptoCurrencyStatus" TEXT, 
+    FOREIGN KEY ("countries") REFERENCES countries_coordinates ("Countries")
 );
 
-ALTER TABLE crypto_world_countries
-ADD CONSTRAINT pk_country PRIMARY KEY (country);
-ALTER TABLE crypto_world_countries
-RENAME COLUMN country TO countries;
 
 
 CREATE TABLE Crypto_Ownership (
-    "Countries" TEXT,
-    "Number_of_Crypto_Ownership" INT
+    "ID" INT Primary Key Not null,
+	"Countries" TEXT NOT NULL,
+    "Number_of_Crypto_Ownership" INT,
+    FOREIGN KEY ("Countries") REFERENCES countries_coordinates ("Countries")
 );
 
-ALTER TABLE Crypto_Ownership
-ADD CONSTRAINT pk_countries PRIMARY KEY (Countries);
 
-CREATE TABLE  world_gdp_data (
+
+CREATE TABLE  "world_gdp_data" (
+    "id" INT PRIMARY KEY NOT NULL,
     "pop" NUMERIC(10, 3),
-    "id" INT,
-    "imfGDP" BIGINT,
-    "unGDP" BIGINT,
-    "country" TEXT,
+    "id_pop" INT,
+    "imfGDP" NUMERIC(20, 6),
+    "unGDP" NUMERIC(20, 6),
+    "countries" TEXT,
     "gdpPerCapita" NUMERIC(13, 7),
     "continent" TEXT,
-    "rank" INT
+    "rank" INT,
+	FOREIGN KEY ("countries") REFERENCES countries_coordinates ("Countries")
 );
 
-ALTER TABLE world_gdp_data
-RENAME COLUMN country TO countries;
-
-CREATE TABLE countries_cordinates (
-    "Country" TEXT,
-    "Latitude" NUMERIC(8, 6),
-    "Longitude" NUMERIC(9, 6),
-    "A2_ISO" TEXT
+CREATE TABLE "Stock_Market_Capital" (
+    "ID" INT Primary Key Not null,
+    "countries" TEXT not null,
+    "Total_market_cap_in_mil_US" INT not null,
+    "Total_market_cap_of_GDP" NUMERIC(5, 1) not null,
+    "Number_of_domestic_companies_listed" TEXT not null,
+    FOREIGN KEY ("countries") REFERENCES countries_coordinates ("Countries")
 );
-
-ALTER TABLE countries_cordinates
-RENAME COLUMN "Country" TO "countries";
-
 
 
 SELECT
     cwc.countries,
-    countries_cordinates."Latitude",
-    countries_cordinates."Longitude",
+    countries_coordinates."Latitude",
+    countries_coordinates."Longitude",
     cwc.pop2023,
     Crypto_Ownership."Number_of_Crypto_Ownership", 
     world_gdp_data."gdpPerCapita"  
 FROM
-    crypto_world_countries AS cwc
+    "Crypto_World_Countries" AS cwc
 LEFT JOIN
     Crypto_Ownership ON cwc.countries = Crypto_Ownership."Countries"
 LEFT JOIN
     world_gdp_data ON cwc.countries = world_gdp_data.countries
 LEFT JOIN
-    countries_cordinates ON cwc.countries = countries_cordinates.countries
+    countries_coordinates ON cwc.countries = countries_coordinates."Countries"
 WHERE
     Crypto_Ownership."Number_of_Crypto_Ownership" IS NOT NULL;
 
 
-select * from Crypto_Ownership
-select * from crypto_world_countries
-select * from world_gdp_data
-select * from countries_cordinates
 
-Drop table Crypto_Ownership
-Drop table crypto_world_countries
-Drop table world_gdp_data
-Drop table countries_cordinates
+
+SELECT
+    cwc.countries,
+    countries_coordinates."Latitude",
+    countries_coordinates."Longitude",
+    cwc.pop2023,
+    Crypto_Ownership."Number_of_Crypto_Ownership", 
+    world_gdp_data."gdpPerCapita"  
+FROM
+    Crypto_World_Countries AS cwc
+LEFT JOIN
+    Crypto_Ownership ON cwc.countries = Crypto_Ownership."Countries"
+LEFT JOIN
+    world_gdp_data ON cwc.countries = world_gdp_data.countries
+LEFT JOIN
+    countries_coordinates ON cwc.countries = countries_coordinates."Countries"
+WHERE
+    Crypto_Ownership."Number_of_Crypto_Ownership" IS NOT NULL;
+	
+-----------------
+SELECT
+    cc."Countries",
+    cc."Latitude",
+    cc."Longitude",
+    "world_gdp_data"."imfGDP",
+    "world_gdp_data"."gdpPerCapita", 
+    "Stock_Market_Capital"."Total_market_cap_of_GDP",
+    "Stock_Market_Capital"."Number_of_domestic_companies_listed"
+FROM
+    countries_coordinates AS cc
+LEFT JOIN
+    "Stock_Market_Capital" ON cc."Countries" = "Stock_Market_Capital"."countries"
+LEFT JOIN
+    "world_gdp_data" ON cc."Countries" = "world_gdp_data"."countries"
+WHERE
+    "Stock_Market_Capital"."Total_market_cap_of_GDP" IS NOT NULL;
+
+	
