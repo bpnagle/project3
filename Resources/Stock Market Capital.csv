@@ -1,0 +1,102 @@
+ID,countries,Total_market_cap_in_mil_US,Total_market_cap_of_GDP,Number_of_domestic_companies_listed
+1,United States,49653000,194.5,"4,266"
+2,Japan,7889318,65.1,"4,154"
+3,China,7474985,126.7,"3,754"
+4,India,4378000,120,"5,270"
+5,Hong Kong,3966952,1262.6,"2,353"
+6,France,2823000,84.9,457
+7,United Kingdom,2821000,100,"1,858"
+8,Canada,2641455,160.7,"3,922"
+9,Saudi Arabia,2429102,347,207
+10,Germany,2284109,60,438
+11,South Korea,2176190,133.5,"2,318"
+12,Taiwan,2007560,267.1,"1,627"
+13,Switzerland,2001603,267.6,236
+14,Iran,1743023,475,367
+15,Australia,1720556,129.3,"1,902"
+16,Netherlands,1597215,132.3,103
+17,South Africa,1051529,348.3,264
+18,Brazil,988374,68.4,345
+19,Sweden,913163,230.4,832
+20,Spain,909175,43.3,"2,711"
+21,Indonesia,757792,46.9,713
+22,Italy,747438,36.5,290
+23,Russia,694739,46.8,213
+24,Denmark,670282,187.5,178
+25,Singapore,652615,191.9,459
+26,Thailand,543164,108.2,743
+27,Malaysia,436538,129.7,927
+28,Mexico,399617,37.1,140
+29,Belgium,321094,59.1,117
+30,Norway,295549,72.9,186
+31,United Arab Emirates,294832,58.6,130
+32,Philippines,272790,75.5,268
+33,Israel,262062,65.2,426
+34,Turkey,237474,33,586
+35,Vietnam,186009,68.6,745
+36,Chile,184549,73,194
+37,Poland,177508,29.9,782
+38,Qatar,165394,113,47
+39,New Zealand,132198,62.2,122
+40,Austria,132083,30.8,68
+41,Ireland,110154,28.5,42
+42,Colombia,106315,39.2,65
+43,Kuwait,105987,86.7,163
+44,Bangladesh,89774,27.7,628
+45,Peru,87092,43.1,199
+46,Morocco,65575,58.1,75
+47,Portugal,61934,25.6,40
+48,Nigeria,56569,13.1,177
+49,Luxembourg,51568,70.4,29
+50,Greece,50986,26.9,171
+51,Kazakhstan,45202,26.6,94
+52,Egypt,41351,11.4,240
+53,Argentina,39394,8.8,91
+54,Pakistan,32567,15.2,557
+55,Hungary,27971,18,45
+56,Czech Republic,26614,10.9,20
+57,Romania,25513,10.3,81
+58,Bahrain,24608,69.9,42
+59,Croatia,22230,39.7,104
+60,Kenya,21398,21.6,60
+61,Finland,20344,10.3,134
+62,Jordan,18205,41.7,179
+63,Bulgaria,17711,25.6,259
+64,Oman,16481,22.4,111
+65,Sri Lanka,15982,19.8,283
+66,Panama,13938,26.3,34
+67,Jamaica,11701,84.7,89
+68,Ghana,9247,12.8,31
+69,Tunisia,8572,21.8,80
+70,Slovenia,8449,16,27
+71,Ivory Coast,7331,12,46
+72,Lebanon,6703,20.1,10
+73,Tanzania,6482,10.4,22
+74,Mauritius,6160,56.4,93
+75,Slovakia,5377,5.3,67
+76,Malta,5081,34.7,27
+77,Cyprus,4693,19.7,92
+78,Ukraine,4415,3.4,78
+79,Serbia,4056,8.2,...
+80,Venezuela,3980,4.3,37
+81,Trinidad and Tobago,3889,44.1,26
+82,Montenegro,3787,92.6,112
+83,Palestine,3447,22.2,46
+84,Rwanda,3214,31,4
+85,Cambodia,3200,10,7
+86,Zambia,3184,13.6,23
+87,Barbados,2780,63.7,15
+88,Zimbabwe,2461,35.9,69
+89,Costa Rica,1901,3.1,10
+90,Namibia,1867,17.5,13
+91,Papua New Guinea,1682,7.4,6
+92,Belarus,1239,2.6,12
+93,Seychelles,1137,71.9,40
+94,Botswana,978,16.9,26
+95,Ecuador,747,4.1,26
+96,Cayman Islands,644,6.4,4
+97,Algeria,371,0.2,...
+98,Paraguay,313,3.5,55
+99,Uruguay,284,1.4,17
+100,Eswatini,234,6.8,6
+101,Bermuda,220,39.6,13
