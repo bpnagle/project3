@@ -80,16 +80,30 @@ LEFT JOIN
 WHERE
     Crypto_Ownership."Number_of_Crypto_Ownership" IS NOT NULL;
 
+CREATE TABLE "Stock_Market_Capital" (
+    "countries" TEXT,
+    "Total_market_cap_in_mil_US" INT,
+    "Total_market_cap_of_GDP" NUMERIC(5, 1),
+    "Number_of_domestic_companies_listed" TEXT
+);
 
-select * from Crypto_Ownership
-select * from crypto_world_countries
-select * from world_gdp_data
-select * from countries_cordinates
-
-Drop table Crypto_Ownership
-Drop table crypto_world_countries
-Drop table world_gdp_data
-Drop table countries_cordinates
+SELECT
+    wgd.countries,
+    countries_cordinates."Latitude",
+    countries_cordinates."Longitude",
+    wgd."imfGDP",
+    wgd."gdpPerCapita", 
+	"Stock_Market_Capital"."Total_market_cap_of_GDP",
+	"Stock_Market_Capital"."Number_of_domestic_companies_listed"
+FROM
+     world_gdp_data AS wgd
+LEFT JOIN
+    "Stock_Market_Capital" ON wgd.countries = "Stock_Market_Capital".countries
+LEFT JOIN
+    countries_cordinates ON wgd.countries = countries_cordinates.countries
+  
+WHERE
+"Stock_Market_Capital"."Total_market_cap_of_GDP" IS NOT NULL;	
 
 
 	
