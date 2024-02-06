@@ -11,3 +11,8 @@ https://finance.yahoo.com/quote/META/history?p=META<br>
 https://www.kaggle.com/datasets/kaushiksuresh147/ethereum-cryptocurrency-historical-dataset<br>
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7414361/<br>
 https://www.mdpi.com/2227-7390/11/20/4395<br>
+https://worldpopulationreview.com/countries/by-gdp
+https://investingintheweb.com/crypto/crypto-ownership-by-country/
+https://www.kaggle.com/datasets/paultimothymooney/latitude-and-longitude-for-every-country-and-state
+https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)
+https://en.wikipedia.org/wiki/List_of_countries_by_stock_market_capitalization
